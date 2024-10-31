@@ -29,9 +29,16 @@ Initial and Final States: Every state machine starts its operation from a predef
 
 ## UPPAAL
 
-UPPAAL stands as an integrated tool environment specifically designed for the modeling, simulation, and verification of real-time systems delineated by networks of timed automata. Originating from joint efforts between Uppsala University and Aalborg University, UPPAAL incorporates a rich set of features. Its core is built upon formal methods, leveraging timed automata theory to ensure systematic and precise analysis. The environment offers an intricate graphical interface that allows users to construct and visualize state machines. Beyond basic timed automata, UPPAAL supports advanced functionalities such as stochastic hybrid systems and cost-optimal modeling that fits the complexities of real-time system design and verification.
+UPPAAL stands as an integrated tool environment specifically designed for the modeling, simulation, and verification of real-time systems delineated by networks of timed automata.
+Originating from joint efforts between Uppsala University and Aalborg University, UPPAAL incorporates a rich set of features.
+Its core is built upon formal methods, leveraging timed automata theory to ensure systematic and precise analysis.
+The environment offers an intricate graphical interface that allows users to construct and visualize state machines.
+Beyond basic timed automata, UPPAAL supports advanced functionalities such as stochastic hybrid systems and cost-optimal modeling that fits the complexities of real-time system design and verification.
 
-[Download Uppaal 4.0](https://www.it.uu.se/research/group/darts/uppaal/download.html)
+### Downloads
+
+- [Download Uppaal 4.0](https://www.it.uu.se/research/group/darts/uppaal/download.html)
+- [Download Uppaal Guide (PDF)](UppaalGuide.pdf)
 
 ### Designing State Machines in UPPAAL
 
@@ -84,8 +91,8 @@ Timed CTL (TCTL) extends the traditional Computation Tree Logic (CTL) by introdu
 
 ### Path Quantifiers:
 
-- **A** (For all paths): Represents universal quantification over paths.
-- **E** (There exists a path): Denotes existential quantification over paths.
+- **A** (for all paths): Represents universal quantification over paths.
+- **E** (there exists a path): Denotes existential quantification over paths.
 
 ### Temporal Modalities:
 
