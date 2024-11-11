@@ -16,7 +16,7 @@ The key challenge is to synchronize the four lights to ensure smooth traffic flo
 Formulate verification queries in UPPAAL to ensure the following:
 
 - There is never a deadlock
-- Car traffic lights are \textbf{never} green at the same time.
+- Car traffic lights are **never** green at the same time.
 - When car lights are green, corresponding pedestrian lights should indicate red.
 - When pedestrian lights are green, corresponding car lights should indicate red.
 - Both pedestrian and car lights should eventually turn green

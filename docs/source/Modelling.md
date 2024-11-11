@@ -37,7 +37,7 @@ Beyond basic timed automata, UPPAAL supports advanced functionalities such as st
 
 ### Downloads
 
-- [Download Uppaal 4.0](https://www.it.uu.se/research/group/darts/uppaal/download.html)
+- [Download Uppaal 5.0](https://uppaal.org/downloads)
 - [Download Uppaal Guide (PDF)](UppaalGuide.pdf)
 
 ### Designing State Machines in UPPAAL
@@ -75,7 +75,9 @@ _Figure 4: Verifier tab in UPPAL_
 **System Declarations:** While individual state machines capture the behavior of single components, real-world systems often consist of multiple interacting components. UPPAAL allows construction of such multi-component systems using the system declaration.
 In the Declarations pane, after defining the individual automata, you can specify a system declaration that initializes and runs the automata concurrently. This declaration looks like:
 
-$$ system Automaton1, Automaton2; $$
+```java
+system Automaton1, Automaton2;
+```
 
 It indicates that Automaton1 and Automaton2 should run concurrently and may interact through synchronization channels if defined.
 
@@ -108,3 +110,55 @@ UPPAAL leverages TCTL to formulate verification queries, providing a tailored se
 - **E[ ]:** Represents "there exists a path, always." It signifies that there's at least one path where a property continuously holds. For example, **E[ ]** $\phi$: means there's a path where $\phi$ is always true.
 - **E< >:** Denotes "there exists a path, eventually." It states that there's at least one path where a property will hold in the future. **E< >** $\phi$: asserts there exists a path where $\phi$ will eventually become true.
 - **p->q:** Denotes implication. It asserts that whenever property $p$ holds, property $q$ must also hold. It's commonly used to represent system guarantees, such as "if condition $p$ is met, then outcome $q$ will follow."
+
+### Example Verification Queries
+
+#### Reachability Queries
+
+Verify that a certain state in the system can be reached.
+
+- **E<> Process1.StateA:** There exists a path where Process1 eventually reaches StateA.
+
+#### Safety Queries
+
+Ensure that a system never enters an undesirable state.This verifies that a state is unreachable, which can be used to check for conditions where critical failures must not happen.
+
+- **A[] !(Process1.StateB):** Process1 never enters StateB, where StateB might be a critical failure state.
+- **A[] Process1.var1 <= threshold:** Ensures that a variable1(var1) never exceeds a certain threshold value
+
+#### Liveness Queries
+
+Verify that a desirable state is eventually reached. This has slightly different semantics from reachability queries, as it ensures that a state is not only reachable but also eventually reached on all paths.
+
+- **A<> Process1.StateC:** Process1 eventually reaches StateC.
+
+#### Bounded Liveness Queries
+
+Ensure that a desirable state is reached within a certain number of steps.
+
+- **A<> Process1.StateA && clock1 <= bound:** On all paths, Process1 reaches StateA within the bound specified by clock1. This query enforces strict timing conditions.
+
+#### Response Queries
+
+Verify that if one state is reached, another state will eventually follow.
+
+- **Process1.StateD -> Process1.StateE:** If Process1 reaches StateD, then it will eventually reach StateE.
+
+#### Deadlock Queries
+
+Ensure the system is free from deadlocks, where no progress can be made.
+
+- **A[] not deadlock:** Asserts that the system never reaches a deadlock state, meaning that it cannot reach a state where no further actions are possible.
+
+#### Mutual Exclusion Queries
+
+Verify that two processes are never in their critical sections simultaneously.
+
+- **A[] !(Process1.critical && Process2.critical):** Ensures that Process1 and Process2 are never in their critical sections at the same time.
+
+## References
+
+1. [Model Checking by Edmund M. Clarke, Jr., Orna Grumberg, and Doron Peled](https://books.google.de/books?id=qJl8DwAAQBAJ) – Comprehensive introduction to model checking and formal verification.
+2. [Principles of Model Checking by Christel Baier and Joost-Pieter Katoen](https://books.google.de/books?id=5dvxCwAAQBAJ) – Covers the theory and algorithms behind model checking and verification.
+3. [Quantitative Model Checking - Coursera](https://www.coursera.org/learn/quantitative-model-checking) – Online course on quantitative model checking and probabilistic systems.
+4. [UPPAAL Tutorials](https://uppaal.org/documentation/) – Official tutorials and documentation for UPPAAL.
