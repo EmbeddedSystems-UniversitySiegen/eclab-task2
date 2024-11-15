@@ -22,6 +22,12 @@ Formulate verification queries in UPPAAL to ensure the following:
 - Both pedestrian and car lights should eventually turn green
 - All lights should never be red at the same time.
 
+### Naming Requirements
+
+- Car traffic lights should be named as `Car_NS` and `Car_EW` for North-South and East-West directions respectively.
+- Pedestrian traffic lights should be named as `Ped_NS` and `Ped_EW` for North-South and East-West directions respectively.
+- States should be named as `Red`, `Yellow`, `Green` for car traffic lights and `Red`, `Green` for pedestrian traffic lights.
+
 ## Task 2
 
 Model two elevator system where the elevators services requests from six floors. The elevators maintains a queue of requests and efficiently travel between floors to service these requests.
@@ -88,6 +94,13 @@ Once the model is set up, use UPPAAL simulator to observe the behavior of your e
 - When a floor is in UpRequest/DownRequest state, it eventually returns to Idle state.
 - When an elevator in MovingUp/MovingDown state, it eventually goes to Loading/Unloading state.
 - Each elevator eventually services every floor.
+
+### Naming Requirements
+
+- Elevator template should be named as `Elevator`.
+- Floor template should be named as `Floor`.
+- Elevator states should be named as `Idle`, `MovingUp`, `MovingDown`, `Loading_Unloading`.
+- Floor states should be named as `Idle`, `UpRequest`, `DownRequest`
 
 ## Deliverables
 
