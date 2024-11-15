@@ -101,6 +101,7 @@ Once the model is set up, use UPPAAL simulator to observe the behavior of your e
 - Floor template should be named as `Floor`.
 - Elevator states should be named as `Idle`, `MovingUp`, `MovingDown`, `Loading_Unloading`.
 - Floor states should be named as `Idle`, `UpRequest`, `DownRequest`
+- Variables should be named as `curr_floor`, `dest_floor` to represent current and destination floor respectively in Elevator template.
 
 ## Deliverables
 
