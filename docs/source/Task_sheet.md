@@ -90,10 +90,10 @@ Since there are nine floors, model the floors as a template in UPPAAL, parameter
 
 Once the model is set up, use UPPAAL simulator to observe the behavior of your elevator system and Formulate verification queries in UPPAAL to ensure the following:
 
-- There is never a deadlock.
-- When a floor is in UpRequest/DownRequest state, it eventually returns to Idle state.
-- When an elevator in MovingUp/MovingDown state, it eventually goes to Loading/Unloading state.
-- Each elevator eventually services every floor.
+1. There is never a deadlock.
+2. When a floor is in UpRequest/DownRequest state, it eventually returns to Idle state.
+3. When an elevator in MovingUp/MovingDown state, it eventually goes to Loading/Unloading state.
+4. Each elevator eventually services every floor.
 
 ### Naming Requirements
 
