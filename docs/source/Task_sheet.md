@@ -15,12 +15,12 @@ The key challenge is to synchronize the four lights to ensure smooth traffic flo
 
 Formulate verification queries in UPPAAL to ensure the following:
 
-- There is never a deadlock
-- Car traffic lights are **never** green at the same time.
-- When car lights are green, corresponding pedestrian lights should indicate red.
-- When pedestrian lights are green, corresponding car lights should indicate red.
-- Both pedestrian and car lights should eventually turn green
-- All lights should never be red at the same time.
+1. There is never a deadlock
+2. Car traffic lights are **never** green at the same time.
+3. When car lights are green, corresponding pedestrian lights should indicate red.
+4. When pedestrian lights are green, corresponding car lights should indicate red.
+5. Both pedestrian and car lights should eventually turn green
+6. All lights should never be red at the same time.
 
 ### Naming Requirements
 
