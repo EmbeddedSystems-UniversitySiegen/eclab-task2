@@ -1,5 +1,5 @@
 # Building html
-´´´ bash 
+``` bash 
 cd docs/
 make
-´´´
+```
